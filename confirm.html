@@ -1,0 +1,40 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <meta content="" property="og:title">
+    <meta content="" property="og:type">
+    <meta content="" property="og:url">
+    <meta content="" property="og:image">
+
+    <link href="site.webmanifest" rel="manifest">
+    <link href="icon.png" rel="apple-touch-icon">
+
+    <script defer src="config.js"></script>
+    <script defer src="/js/vendor/alpinejs.min.js"></script>
+    <script src="/js/confirm.js?v=1.0"></script>
+
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <meta content="#fafafa" name="theme-color">
+</head>
+
+<body>
+<div x-data="confirm">
+    <h2>Bulletin Monitor</h2>
+    <h4>A K-Monitortól</h4>
+    <template x-if="success">
+        <p>Köszönjük felíratkozásodat.</p>
+    </template>
+    <template x-if="!success">
+        <p>A felíratkozás közben hiba történt, próbáld újra.</p>
+    </template>
+</div>
+</body>
+</html>
