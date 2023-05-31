@@ -29,10 +29,10 @@
 <div x-data="confirm">
     <h2>Bulletin Monitor</h2>
     <h4>A K-Monitortól</h4>
-    <template x-if="success">
+    <template x-if="ready && success">
         <p>Köszönjük felíratkozásodat.</p>
     </template>
-    <template x-if="!success">
+    <template x-if="ready && !success">
         <p>A felíratkozás közben hiba történt, próbáld újra.</p>
     </template>
 </div>
