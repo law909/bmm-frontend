@@ -29,7 +29,7 @@ document.addEventListener('alpine:init', () => {
                         this.clearFormData();
                     } else {
                         this.validation = respdata.fields;
-                        alert('Kérjük javítsa a pirossal jelölt mezőket.');
+                        alert('A felíratkozás közben hiba történt.');
                     }
                 })
                 .catch((error) => {
