@@ -5,7 +5,9 @@ document.addEventListener('alpine:init', () => {
         init() {
             let myUrlParams = new URLSearchParams(window.location.search);
 
-            fetch(new URL('/api/subscriptions/confirm/' + myUrlParams.get('s'), API_URL))
+            fetch(new URL('/api/subscriptions/confirm/' + myUrlParams.get('s'), API_URL), {
+                method: 'POST'
+            })
                 .then((response) => response.json())
                 .then((data) => {
                     this.success = data.success;
