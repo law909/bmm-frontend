@@ -190,6 +190,31 @@ textarea {
     clear: both;
 }
 
+.btn {
+    display: inline-block;
+    padding: 4px 12px;
+    line-height: 2em;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-repeat: repeat-x;
+    border: 1px solid;
+    border-radius: var(--default-radius);
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    background: linear-gradient(#0000, rgb(0 0 0/7%)) 100%;
+    transition: .5s;
+}
+
+.btn-primary {
+    font-weight: bold;
+    color: var(--light-font-color);
+    background-color: var(--brand-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+
 .bmm-container {
     display: block;
     padding-left: 1em;
