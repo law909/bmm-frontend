@@ -26,40 +26,43 @@
 </head>
 
 <body>
-<div>
-    <h2>Bulletin Monitor</h2>
-    <h4>A K-Monitortól</h4>
-    <p>Segítséget szeretnénk nyújtani civileknek a...</p>
+<div class="bmm-container">
+    <div class="bmm-data-container">
+        <div class="bmm-row bmm-flex-dir-row" x-data="subscribeForm">
+            <div class="bmm-col-100">
+                <h2>Bulletin Monitor</h2>
+                <h4>A K-Monitortól</h4>
+                <p>Segítséget szeretnénk nyújtani civileknek a...</p>
+                <div class="bmm-control-row">
+                    <label class="bmm-label">Email</label>
+                    <input class="bmm-input" required type="email" x-model="formData.email">
+                </div>
+                <div class="bmm-control-row">
+                    <label class="bmm-label">Esemény</label>
+                    <select class="bmm-input" x-model="formData.eventgenerator">
+                        <option value="">válassz</option>
+                        <template
+                            :key="eventgen.id"
+                            x-for="eventgen in eventgeneratorList"
+                        >
+                            <option
+                                :value="eventgen.id"
+                                x-text="eventgen.name"
+                            ></option>
+                        </template>
+                    </select>
+                </div>
+                <div class="bmm-control-row">
+                    <label class="bmm-label">Megfigyelt kifejezés</label>
+                    <input class="bmm-input" required type="text" x-model="formData.parameter">
+                </div>
+                <div class="bmm-control-row">
+                    <button class="btn btn-primary" @click="save()">Felíratkozás</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="bmm-row" x-data="subscribeForm">
-    <div class="bmm-control-row">
-        <label class="bmm-label">Email</label>
-        <input class="bmm-input" required type="email" x-model="formData.email">
-    </div>
-    <div class="bmm-control-row">
-        <label class="bmm-label">Esemény</label>
-        <select class="bmm-input" x-model="formData.eventgenerator">
-            <option value="">válassz</option>
-            <template
-                :key="eventgen.id"
-                x-for="eventgen in eventgeneratorList"
-            >
-                <option
-                    :value="eventgen.id"
-                    x-text="eventgen.name"
-                ></option>
-            </template>
-        </select>
-    </div>
-    <div class="bmm-control-row">
-        <label class="bmm-label">Megfigyelt kifejezés</label>
-        <input class="bmm-input" required type="text" x-model="formData.parameter">
-    </div>
-    <div class="bmm-control-row">
-        <button class="btn btn-primary" @click="save()">Felíratkozás</button>
-    </div>
-</div>
-
 </body>
 
 </html>

@@ -26,15 +26,21 @@
 </head>
 
 <body>
-<div x-data="confirm">
-    <h2>Bulletin Monitor</h2>
-    <h4>A K-Monitortól</h4>
-    <template x-if="ready && success">
-        <p>Köszönjük felíratkozásodat.</p>
-    </template>
-    <template x-if="ready && !success">
-        <p>A felíratkozás közben hiba történt, próbáld újra.</p>
-    </template>
+<div class="bmm-container">
+    <div class="bmm-data-container">
+        <div class="bmm-row bmm-flex-dir-row">
+            <div class="bmm-col-100" x-data="confirm">
+                <h2>Bulletin Monitor</h2>
+                <h4>A K-Monitortól</h4>
+                <template x-if="ready && success">
+                    <p>Köszönjük felíratkozásodat.</p>
+                </template>
+                <template x-if="ready && !success">
+                    <p>A felíratkozás közben hiba történt, próbáld újra.</p>
+                </template>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

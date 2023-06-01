@@ -28,6 +28,10 @@
     accent-color: var(--brand-color);
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     color: #222;
     font-size: 1em;
@@ -186,11 +190,19 @@ textarea {
     clear: both;
 }
 
-.co-control-row {
+.bmm-container {
+    display: block;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bmm-control-row {
     margin-bottom: var(--gutter);
 }
 
-.co-label {
+.bmm-label {
     display: inline-block;
     padding-left: var(--input-h-gutter);
     margin-bottom: 4px;
@@ -199,7 +211,7 @@ textarea {
     cursor: pointer;
 }
 
-.co-input {
+.bmm-input {
     padding: var(--input-v-gutter) var(--input-h-gutter);
     display: block;
     width: 100%;
@@ -216,8 +228,35 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+@media screen and (min-width: 761px) {
+    .bmm-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 1em;
+        max-width: 966px;
+    }
+
+    .bmm-data-container {
+        flex-basis: 100%;
+    }
+
+    .bmm-row {
+        display: flex;
+    }
+
+    .bmm-flex-dir-row {
+        flex-direction: row;
+    }
+
+    .bmm-flex-dir-column {
+        flex-direction: column;
+    }
+
+    .bmm-col-100 {
+        flex-basis: 100%;
+    }
+
 }
 
 @media print,
