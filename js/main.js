@@ -29,7 +29,7 @@ document.addEventListener('alpine:init', () => {
                         this.clearFormData();
                     } else {
                         this.validation = respdata.fields;
-                        alert('A felíratkozás közben hiba történt.');
+                        alert('Ezzel az email címmel nem iratkozhatsz fel.');
                     }
                 })
                 .catch((error) => {
