@@ -17,18 +17,18 @@
 
     <script defer src="config.js"></script>
     <script defer src="/js/vendor/alpinejs.min.js"></script>
-    <script src="/js/main.js?v=1.2"></script>
+    <script src="/js/main.js?v=1.3"></script>
 
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="css/main.css?v=1.1" rel="stylesheet">
 
     <meta content="#fafafa" name="theme-color">
 </head>
 
-<body>
+<body x-data="subscribeForm" x-on:keydown.escape="isModalOpen=false">
 <div class="bmm-container">
     <div class="bmm-data-container">
-        <div class="bmm-row bmm-flex-dir-row" x-data="subscribeForm">
+        <div class="bmm-row bmm-flex-dir-row">
             <div class="bmm-col-100">
                 <h2>Bulletin Monitor</h2>
                 <h4>A K-Monitortól</h4>
@@ -39,18 +39,30 @@
                 </div>
                 <div class="bmm-control-row">
                     <label class="bmm-label">Esemény</label>
-                    <select class="bmm-input" x-model="formData.eventgenerator">
-                        <option value="">válassz</option>
-                        <template
-                            :key="eventgen.id"
-                            x-for="eventgen in eventgeneratorList"
-                        >
-                            <option
+                    <template
+                        :key="eventgen.id"
+                        x-for="eventgen in eventgeneratorList"
+                    >
+                        <div class="bmm-radio">
+                            <input
                                 :value="eventgen.id"
+                                class="bmm-radio-input"
+                                name="eventgenerator"
+                                type="radio"
+                                x-model="formData.eventgenerator"
+                            >
+                            <div
+                                class="bmm-radio-caption"
                                 x-text="eventgen.name"
-                            ></option>
-                        </template>
-                    </select>
+                            ></div>
+                            <template x-if="eventgen.description">
+                                <div
+                                    class="bmm-radio-description"
+                                    x-text="eventgen.description"
+                                ></div>
+                            </template>
+                        </div>
+                    </template>
                 </div>
                 <div class="bmm-control-row">
                     <label class="bmm-label">Megfigyelt kifejezés</label>
@@ -63,6 +75,26 @@
         </div>
     </div>
 </div>
+
+<div
+    class="modal"
+    role="dialog"
+    tabindex="-1"
+    x-cloak
+    x-on:click.away="isModalOpen = false"
+    x-show="isModalOpen"
+    x-transition
+>
+    <div class="modal-inner">
+        <div class="modal-header">
+            <h3>Figyusz!</h3>
+            <button aria-label="Close" x-on:click="isModalOpen=false">✖</button>
+        </div>
+        <p x-text="modalText"></p>
+    </div>
+</div>
+<div class="overlay" x-cloak x-show="isModalOpen"></div>
+
 </body>
 
 </html>

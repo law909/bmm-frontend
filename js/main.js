@@ -1,8 +1,11 @@
 document.addEventListener('alpine:init', () => {
     Alpine.data('subscribeForm', () => ({
+        isModalOpen: false,
+        modalText: '',
         eventgeneratorList: [],
         formData: null,
         validation: null,
+        selectedEg: null,
         clearFormData() {
             this.formData = {
                 email: null,
@@ -26,10 +29,13 @@ document.addEventListener('alpine:init', () => {
                 .then((response) => response.json())
                 .then((respdata) => {
                     if (respdata.success) {
+                        this.modalText = 'Küldtünk egy emailt a megerősítő linkkel, klikkelj rá!';
+                        this.isModalOpen = true;
                         this.clearFormData();
                     } else {
                         this.validation = respdata.fields;
-                        alert('Ezzel az email címmel nem iratkozhatsz fel.');
+                        this.modalText = 'Ezzel az email címmel nem iratkozhatsz fel.';
+                        this.isModalOpen = true;
                     }
                 })
                 .catch((error) => {
