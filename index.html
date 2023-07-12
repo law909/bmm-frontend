@@ -31,8 +31,10 @@
         <div class="bmm-row bmm-flex-dir-row">
             <div class="bmm-col-100">
                 <h2>Figyusz!</h2>
-                <h4>A K-Monitortól</h4>
-                <p>Segítséget szeretnénk nyújtani civileknek a...</p>
+                <p>A Figyusz egy alkalmazás, amelyben értesítésekre iratkozhatsz fel, hogy azonnal értesülj a figyelt közigazgatási és állami adatbázisok
+                    frissülése esetén.</p>
+                <p>Feliratkozáshoz adj meg egy téged érdeklő kulcsszót és az e-mail címedet, valamint válaszd ki, mely adatbázisból
+                    szeretnél értesítést kapni.</p>
                 <div class="bmm-control-row">
                     <label class="bmm-label">Email</label>
                     <input class="bmm-input" required type="email" x-model="formData.email">
@@ -65,12 +67,21 @@
                     </template>
                 </div>
                 <div class="bmm-control-row">
-                    <label class="bmm-label">Megfigyelt kifejezés</label>
+                    <label class="bmm-label">Megfigyelt kulcsszó</label>
                     <input class="bmm-input" required type="text" x-model="formData.parameter">
                 </div>
                 <div class="bmm-control-row">
                     <button class="btn btn-primary" @click="save()">Feliratkozás</button>
                 </div>
+                <p>
+                    A <a href="https://k-monitor.hu">K-Monitor</a> által életre hívott eszköz a <a href="https://code4.hu">Code for Hungary</a> önkéntes
+                    fejlesztői közösség fejlesztésében valósult meg.
+                    Ha hibát találtál, fejlesztési ötleted van, vagy szívesen részt vennél az oldal jobbá tételében, írj a <a
+                    href="mailto:figyusz@k-monitor.hu">figyusz@k-monitor.hu</a> e-mail címre!
+                </p>
+                <p>
+                    <a href="https://tamogatas.k-monitor.hu">Támogasd</a> az eszköz fenntartását és fejlesztését!
+                </p>
             </div>
         </div>
     </div>
