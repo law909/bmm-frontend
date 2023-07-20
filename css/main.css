@@ -11,11 +11,9 @@
    Base styles: opinionated defaults
    ========================================================================== */
 :root {
-    --brand-color: #888888;
-    --secondary-color: #C3C3C3;
+    --brand-color: #46009e;
+    --secondary-color: #FF3366;
     --background-color: #F3F3F3;
-    --dark-font-color: black;
-    --light-font-color: white;
     --default-radius: 5px;
     --gutter: 1em;
     --input-h-gutter: 1em;
@@ -231,9 +229,14 @@ textarea {
     display: inline-block;
     padding-left: var(--input-h-gutter);
     margin-bottom: 4px;
-    font-size: 0.875em;
     font-weight: 400;
     cursor: pointer;
+}
+
+.bmm-input-info {
+    display: inline-block;
+    padding-left: var(--input-h-gutter);
+    margin-bottom: 4px;
 }
 
 .bmm-input {

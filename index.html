@@ -3,12 +3,20 @@
 
 <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WX4K5N7');</script>
-<!-- End Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WX4K5N7');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <title></title>
     <meta content="" name="description">
@@ -27,15 +35,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="/js/main.js?v=1.3"></script>
 
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/main.css?v=1.1" rel="stylesheet">
+    <link href="css/main.css?v=1.2" rel="stylesheet">
 
     <meta content="#fafafa" name="theme-color">
 </head>
 
 <body x-data="subscribeForm" x-on:keydown.escape="isModalOpen=false">
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WX4K5N7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe height="0"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WX4K5N7" style="display:none;visibility:hidden" width="0"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="bmm-container">
     <div class="bmm-data-container">
@@ -43,15 +53,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="bmm-col-100">
                 <h2>Figyusz!</h2>
                 <p>A Figyusz egy alkalmazás, amelyben értesítésekre iratkozhatsz fel, hogy azonnal értesülj a figyelt közigazgatási és állami adatbázisok
-                    frissülése esetén.</p>
+                    frissítése esetén.</p>
                 <p>Feliratkozáshoz adj meg egy téged érdeklő kulcsszót és az e-mail címedet, valamint válaszd ki, mely adatbázisból
-                    szeretnél értesítést kapni.</p>
+                    szeretnél értesítést kapni. Keresőink rendszeresen figyelik az oldalt, a találat esetén e-mailben küldenek értesítést. </p>
                 <div class="bmm-control-row">
-                    <label class="bmm-label">Email</label>
-                    <input class="bmm-input" required type="email" x-model="formData.email">
-                </div>
-                <div class="bmm-control-row">
-                    <label class="bmm-label">Esemény</label>
+                    <label class="bmm-label">Válaszd ki, mely adatbázis frissítései érdekelnek</label>
                     <template
                         :key="eventgen.id"
                         x-for="eventgen in eventgeneratorList"
@@ -78,8 +84,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </template>
                 </div>
                 <div class="bmm-control-row">
-                    <label class="bmm-label">Megfigyelt kulcsszó</label>
+                    <label class="bmm-label">Add meg a figyelni kívánt kifejezést</label>
                     <input class="bmm-input" required type="text" x-model="formData.parameter">
+                </div>
+                <div class="bmm-control-row">
+                    <label class="bmm-label">Add meg az e-mail címedet</label>
+                    <input class="bmm-input" required type="email" x-model="formData.email">
+                    <span class="bmm-input-info">az e-mail címed megadásával elfogadod az adatkezelési tájékoztatót</span>
                 </div>
                 <div class="bmm-control-row">
                     <button class="btn btn-primary" @click="save()">Feliratkozás</button>
