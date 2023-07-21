@@ -13,8 +13,9 @@
 :root {
     --brand-color: #46009e;
     --secondary-color: #FF3366;
-    --background-color: #F3F3F3;
-    --default-radius: 5px;
+    --light-font-color: #F9F6F6;
+    --default-radius: 25px;
+    --input-radius: 5px;
     --gutter: 1em;
     --input-h-gutter: 1em;
     --input-v-gutter: 0.5em;
@@ -31,7 +32,8 @@
 }
 
 html {
-    color: #222;
+    color: var(--brand-color);
+    background-color: #F9F6F6;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -188,6 +190,55 @@ textarea {
     clear: both;
 }
 
+.bmm-header {
+    background-image: url('/img/header-desktop.svg');
+    background-position-y: bottom;
+    background-size: cover;
+    min-height: 19vh;
+}
+
+.bmm-header-container {
+    display: block;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bmm-footer {
+    margin-top: 5vh;
+    min-height: 14vh;
+    background-color: var(--secondary-color);
+    color: var(--light-font-color);
+}
+
+.bmm-footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px 0.5em;
+    grid-template-areas:
+    "c4hu kmonitor"
+    "adatkezelesi adatkezelesi";
+}
+
+.bmm-c4hu {
+    grid-area: c4hu;
+    align-self: center;
+    justify-self: right;
+}
+
+.bmm-kmonitor {
+    grid-area: kmonitor;
+    align-self: center;
+}
+
+.bmm-adatkezelesi {
+    grid-area: adatkezelesi;
+    align-self: center;
+    justify-self: center;
+}
+
 .btn {
     display: inline-block;
     padding: 4px 12px;
@@ -245,7 +296,7 @@ textarea {
     width: 100%;
     background: white;
     border: 1px solid var(--brand-color);
-    border-radius: var(--default-radius);
+    border-radius: var(--input-radius);
     transition: 0.3s all ease-in-out;
 }
 
@@ -316,6 +367,18 @@ textarea {
    ========================================================================== */
 
 @media screen and (min-width: 761px) {
+    .bmm-header {
+        min-height: 25vh;
+    }
+
+    .bmm-header-container {
+        max-width: 966px;
+    }
+
+    .bmm-footer {
+        min-height: 20vh;
+    }
+
     .bmm-container {
         display: flex;
         flex-direction: row;
@@ -426,4 +489,21 @@ textarea {
     h3 {
         page-break-after: avoid;
     }
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.highlighted-text {
+    color: var(--secondary-color);
+}
+
+.center-in-flex {
+    margin-left: auto;
+    margin-right: auto;
 }

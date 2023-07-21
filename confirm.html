@@ -20,24 +20,27 @@
     <script src="/js/confirm.js?v=1.0"></script>
 
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/main.css?v=1.2" rel="stylesheet">
+    <link href="css/main.css?v=1.3" rel="stylesheet">
 
     <meta content="#fafafa" name="theme-color">
 </head>
 
 <body>
+<header class="bmm-header">
+    <div class="bmm-header-container">
+        <img src="/img/figyusz-logo.svg">
+    </div>
+</header>
 <div class="bmm-container">
     <div class="bmm-data-container">
         <div class="bmm-row bmm-flex-dir-row">
             <div class="bmm-col-100" x-data="confirm">
-                <h2>Figyusz!</h2>
-                <h4>A K-Monitortól</h4>
                 <template x-if="ready && success">
-                    <p>Sikeres feliratkozás! Figyeld a megadott e-mail fiókot, oda küldünk értesítést, amint rendszerünk találatot észlel a megfigyelt
-                        adatbázisban.</p>
+                    <p class="highlighted-text">Sikeres feliratkozás! Figyeld a megadott e-mail fiókot, oda küldünk értesítést, amint rendszerünk találatot
+                        észlel a megfigyelt adatbázisban.</p>
                 </template>
                 <template x-if="ready && !success">
-                    <p>A feliratkozás közben hiba történt, próbáld újra.</p>
+                    <p class="highlighted-text">A feliratkozás közben hiba történt, próbáld újra.</p>
                 </template>
                 <p>
                     A <a href="https://k-monitor.hu">K-Monitor</a> által életre hívott eszköz a <a href="https://code4.hu">Code for Hungary</a> önkéntes
@@ -45,12 +48,25 @@
                     Ha hibát találtál, fejlesztési ötleted van, vagy szívesen részt vennél az oldal jobbá tételében, írj a <a
                     href="mailto:figyusz@k-monitor.hu">figyusz@k-monitor.hu</a> e-mail címre!
                 </p>
-                <p>
+                <p class="text-align-center">
                     <a href="https://tamogatas.k-monitor.hu">Támogasd</a> az eszköz fenntartását és fejlesztését!
                 </p>
             </div>
         </div>
     </div>
 </div>
+<footer class="bmm-footer">
+    <div class="bmm-footer-grid">
+        <div class="bmm-c4hu">
+            <img src="">
+        </div>
+        <div class="bmm-kmonitor">
+            <img src="">
+        </div>
+        <div class="bmm-adatkezelesi">
+            <a href="/">Adatkezelési tájékoztató</a> &copy; 2023
+        </div>
+    </div>
+</footer>
 </body>
 </html>
