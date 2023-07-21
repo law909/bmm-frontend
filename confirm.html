@@ -17,7 +17,7 @@
 
     <script defer src="config.js"></script>
     <script defer src="/js/vendor/alpinejs.min.js"></script>
-    <script src="/js/confirm.js?v=1.0"></script>
+    <script src="/js/confirm.js?v=1.1"></script>
 
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/main.css?v=1.3" rel="stylesheet">
@@ -25,16 +25,13 @@
     <meta content="#fafafa" name="theme-color">
 </head>
 
-<body>
-<header class="bmm-header">
-    <div class="bmm-header-container">
-        <img src="/img/figyusz-logo.svg">
-    </div>
+<body x-data="confirm">
+<header class="bmm-header" x-ref="header">
 </header>
 <div class="bmm-container">
     <div class="bmm-data-container">
         <div class="bmm-row bmm-flex-dir-row">
-            <div class="bmm-col-100" x-data="confirm">
+            <div class="bmm-col-100">
                 <template x-if="ready && success">
                     <p class="highlighted-text">Sikeres feliratkozás! Figyeld a megadott e-mail fiókot, oda küldünk értesítést, amint rendszerünk találatot
                         észlel a megfigyelt adatbázisban.</p>
@@ -55,18 +52,7 @@
         </div>
     </div>
 </div>
-<footer class="bmm-footer">
-    <div class="bmm-footer-grid">
-        <div class="bmm-c4hu">
-            <img src="">
-        </div>
-        <div class="bmm-kmonitor">
-            <img src="">
-        </div>
-        <div class="bmm-adatkezelesi">
-            <a href="/">Adatkezelési tájékoztató</a> &copy; 2023
-        </div>
-    </div>
+<footer class="bmm-footer" x-ref="footer">
 </footer>
 </body>
 </html>

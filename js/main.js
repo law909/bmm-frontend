@@ -1,5 +1,5 @@
 document.addEventListener('alpine:init', () => {
-    Alpine.data('subscribeForm', () => ({
+    Alpine.data('figyusz', () => ({
         isModalOpen: false,
         modalText: '',
         eventgeneratorList: [],
@@ -14,6 +14,14 @@ document.addEventListener('alpine:init', () => {
             }
         },
         init() {
+            fetch(new URL('/templates/header.html', document.URL))
+                .then(response => response.text())
+                .then(html => this.$refs.header.innerHTML = html);
+
+            fetch(new URL('/templates/footer.html', document.URL))
+                .then(response => response.text())
+                .then(html => this.$refs.footer.innerHTML = html);
+
             this.clearFormData();
             fetch(new URL('/api/eventgenerators', API_URL))
                 .then((response) => response.json())
