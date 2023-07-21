@@ -33,10 +33,10 @@
 
     <script defer src="config.js"></script>
     <script defer src="/js/vendor/alpinejs.min.js"></script>
-    <script src="/js/main.js?v=1.4"></script>
+    <script src="/js/main.js?v=1.5"></script>
 
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/main.css?v=1.4" rel="stylesheet">
+    <link href="css/main.css?v=1.5" rel="stylesheet">
 
     <meta content="#46009e" name="theme-color">
 </head>
@@ -56,56 +56,51 @@
             <div class="bmm-col-100">
                 <h3 class="highlighted-text">A Figyusz egy alkalmazás, amelyben értesítésekre iratkozhatsz fel, hogy azonnal értesülj a figyelt közigazgatási és
                     állami adatbázisok frissítése esetén.</h3>
-                <h4>Feliratkozáshoz adj meg egy téged érdeklő kulcsszót és az e-mail címedet, valamint válaszd ki, mely adatbázisból
-                    szeretnél értesítést kapni. Keresőink rendszeresen figyelik az oldalt, a találat esetén e-mailben küldenek értesítést. </h4>
-                <div class="bmm-control-row">
-                    <label class="bmm-label">Válaszd ki, mely adatbázis frissítései érdekelnek</label>
-                    <template
-                        :key="eventgen.id"
-                        x-for="eventgen in eventgeneratorList"
-                    >
-                        <div class="bmm-radio">
-                            <input
-                                :value="eventgen.id"
-                                class="bmm-radio-input"
-                                name="eventgenerator"
-                                type="radio"
-                                x-model="formData.eventgenerator"
-                            >
-                            <div
-                                class="bmm-radio-caption"
-                                x-text="eventgen.name"
-                            ></div>
-                            <template x-if="eventgen.description">
+                <div class="bmm-col-80">
+                    <h4>Feliratkozáshoz adj meg egy téged érdeklő kulcsszót és az e-mail címedet, valamint válaszd ki, mely adatbázisból
+                        szeretnél értesítést kapni. Keresőink rendszeresen figyelik az oldalt, a találat esetén e-mailben küldenek értesítést. </h4>
+                    <div class="bmm-control-row">
+                        <label class="bmm-label">Válaszd ki, mely adatbázis frissítései érdekelnek</label>
+                        <template
+                            :key="eventgen.id"
+                            x-for="eventgen in eventgeneratorList"
+                        >
+                            <div class="bmm-radio">
+                                <input
+                                    :value="eventgen.id"
+                                    class="bmm-radio-input"
+                                    name="eventgenerator"
+                                    type="radio"
+                                    x-model="formData.eventgenerator"
+                                >
                                 <div
-                                    class="bmm-radio-description"
-                                    x-text="eventgen.description"
+                                    class="bmm-radio-caption"
+                                    x-text="eventgen.name"
                                 ></div>
-                            </template>
-                        </div>
-                    </template>
+                                <template x-if="eventgen.description">
+                                    <div
+                                        class="bmm-radio-description"
+                                        x-text="eventgen.description"
+                                    ></div>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="bmm-control-row">
+                        <label class="bmm-label">Add meg a figyelni kívánt kifejezést</label>
+                        <input class="bmm-input" required type="text" x-model="formData.parameter">
+                    </div>
+                    <div class="bmm-control-row">
+                        <label class="bmm-label">Add meg az e-mail címedet</label>
+                        <input class="bmm-input" required type="email" x-model="formData.email">
+                        <span class="bmm-input-info">&hearts; az e-mail címed megadásával elfogadod az adatkezelési tájékoztatót</span>
+                    </div>
+                    <div class="bmm-control-row flex">
+                        <button class="btn btn-primary center-in-flex" @click="save()">Feliratkozás</button>
+                    </div>
+                    <div x-ref="innerfooter">
+                    </div>
                 </div>
-                <div class="bmm-control-row">
-                    <label class="bmm-label">Add meg a figyelni kívánt kifejezést</label>
-                    <input class="bmm-input" required type="text" x-model="formData.parameter">
-                </div>
-                <div class="bmm-control-row">
-                    <label class="bmm-label">Add meg az e-mail címedet</label>
-                    <input class="bmm-input" required type="email" x-model="formData.email">
-                    <span class="bmm-input-info">&hearts; az e-mail címed megadásával elfogadod az adatkezelési tájékoztatót</span>
-                </div>
-                <div class="bmm-control-row flex">
-                    <button class="btn btn-primary center-in-flex" @click="save()">Feliratkozás</button>
-                </div>
-                <p>
-                    A <a href="https://k-monitor.hu">K-Monitor</a> által életre hívott eszköz a <a href="https://code4.hu">Code for Hungary</a> önkéntes
-                    fejlesztői közösség fejlesztésében valósult meg.
-                    Ha hibát találtál, fejlesztési ötleted van, vagy szívesen részt vennél az oldal jobbá tételében, írj a <a
-                    href="mailto:figyusz@k-monitor.hu">figyusz@k-monitor.hu</a> e-mail címre!
-                </p>
-                <p class="text-align-center">
-                    <a href="https://tamogatas.k-monitor.hu">Támogasd</a> az eszköz fenntartását és fejlesztését!
-                </p>
             </div>
         </div>
     </div>

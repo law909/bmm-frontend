@@ -22,6 +22,10 @@ document.addEventListener('alpine:init', () => {
                 .then(response => response.text())
                 .then(html => this.$refs.footer.innerHTML = html);
 
+            fetch(new URL('/templates/innerfooter.html', document.URL))
+                .then(response => response.text())
+                .then(html => this.$refs.innerfooter.innerHTML = html);
+
             this.clearFormData();
             fetch(new URL('/api/eventgenerators', API_URL))
                 .then((response) => response.json())
