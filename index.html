@@ -36,9 +36,9 @@
     <script src="/js/main.js?v=1.4"></script>
 
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/main.css?v=1.3" rel="stylesheet">
+    <link href="css/main.css?v=1.4" rel="stylesheet">
 
-    <meta content="#fafafa" name="theme-color">
+    <meta content="#46009e" name="theme-color">
 </head>
 
 <body x-data="figyusz" x-on:keydown.escape="isModalOpen=false">
@@ -92,7 +92,7 @@
                 <div class="bmm-control-row">
                     <label class="bmm-label">Add meg az e-mail címedet</label>
                     <input class="bmm-input" required type="email" x-model="formData.email">
-                    <span class="bmm-input-info">az e-mail címed megadásával elfogadod az adatkezelési tájékoztatót</span>
+                    <span class="bmm-input-info">&hearts; az e-mail címed megadásával elfogadod az adatkezelési tájékoztatót</span>
                 </div>
                 <div class="bmm-control-row flex">
                     <button class="btn btn-primary center-in-flex" @click="save()">Feliratkozás</button>

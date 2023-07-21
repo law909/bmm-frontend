@@ -19,12 +19,50 @@
     --gutter: 1em;
     --input-h-gutter: 1em;
     --input-v-gutter: 0.5em;
-    --default-font-size: 1em;
-    --content-font-size: 1em;
-    --header5-font-size: 1em;
-    --co-font-size-small-d: 0.875em;
 
     accent-color: var(--brand-color);
+}
+
+@font-face {
+    font-family: Faune;
+    src: url("/fonts/Faune/woff2/Faune-Display_Thin.woff2") format("woff2"), url("/fonts/Faune/otf/Faune-Display_Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Faune;
+    src: url("/fonts/Faune/woff2/Faune-Text_Bold.woff2") format("woff2"), url("/fonts/Faune/otf/Faune-Text_Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Faune;
+    src: url("/fonts/Faune/woff2/Faune-Text_Italic.woff2") format("woff2"), url("/fonts/Faune/otf/Faune-Text_Italic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic
+}
+
+@font-face {
+    font-family: Faune;
+    src: url("/fonts/Faune/woff2/Faune-Display_Black.woff2") format("woff2"), url("/fonts/Faune/otf/Faune-Display_Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Faune;
+    src: url("/fonts/Faune/woff2/Faune-Display_Bold_Italic.woff2") format("woff2"), url("/fonts/Faune/otf/Faune-Display_Bold_Italic.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic
+}
+
+@font-face {
+    font-family: Faune;
+    src: url("/fonts/Faune/woff2/Faune-Text_Regular.woff2") format("woff2"), url("/fonts/Faune/otf/Faune-Text_Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal
 }
 
 * {
@@ -34,8 +72,17 @@
 html {
     color: var(--brand-color);
     background-color: #F9F6F6;
+    font-family: 'Faune', Arial, sans-serif;
     font-size: 1em;
     line-height: 1.4;
+}
+
+h3 {
+
+}
+
+h4 {
+    font-weight: normal;
 }
 
 /*
@@ -105,7 +152,7 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
+   Author"s custom styles
    ========================================================================== */
 
 /* ==========================================================================
@@ -191,7 +238,7 @@ textarea {
 }
 
 .bmm-header {
-    background-image: url('/img/header-desktop.svg');
+    background-image: url("/img/header-desktop.svg");
     background-position-y: bottom;
     background-size: cover;
     min-height: 19vh;
@@ -280,7 +327,7 @@ textarea {
     display: inline-block;
     padding-left: var(--input-h-gutter);
     margin-bottom: 4px;
-    font-weight: 400;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -288,6 +335,7 @@ textarea {
     display: inline-block;
     padding-left: var(--input-h-gutter);
     margin-bottom: 4px;
+    font-size: 0.85em;
 }
 
 .bmm-input {
@@ -362,7 +410,7 @@ textarea {
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
+   These examples override the primary ("mobile first") styles.
    Modify as content requires.
    ========================================================================== */
 
@@ -447,7 +495,7 @@ textarea {
     }
 
     /*
-     * Don't show links that are fragment identifiers,
+     * Don"t show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
     a[href^="#"]::after,
