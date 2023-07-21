@@ -243,6 +243,7 @@ textarea {
     background-position-y: bottom;
     background-size: cover;
     min-height: 19vh;
+    margin-bottom: 5vh;
 }
 
 .bmm-header-container {
@@ -417,7 +418,7 @@ textarea {
 
 @media screen and (min-width: 761px) {
     .bmm-header {
-        min-height: 25vh;
+        min-height: 20vh;
     }
 
     .bmm-header-container {
@@ -425,7 +426,7 @@ textarea {
     }
 
     .bmm-footer {
-        min-height: 20vh;
+        min-height: 14vh;
     }
 
     .bmm-container {
