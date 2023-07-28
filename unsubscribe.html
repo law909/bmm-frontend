@@ -1,0 +1,50 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <meta content="" property="og:title">
+    <meta content="" property="og:type">
+    <meta content="" property="og:url">
+    <meta content="" property="og:image">
+
+    <link href="site.webmanifest" rel="manifest">
+    <link href="icon.png" rel="apple-touch-icon">
+
+    <script defer src="config.js"></script>
+    <script defer src="/js/vendor/alpinejs.min.js"></script>
+    <script src="/js/unsubscribe.js?v=1.2"></script>
+
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/main.css?v=1.8" rel="stylesheet">
+
+    <meta content="#46009e" name="theme-color">
+</head>
+
+<body x-data="unsubscribe">
+<header class="bmm-header" x-ref="header">
+</header>
+<div class="bmm-container">
+    <div class="bmm-data-container">
+        <div class="bmm-row bmm-flex-dir-row">
+            <div class="bmm-col-100">
+                <template x-if="ready && success">
+                    <h3 class="highlighted-text">Sikeres leiratkozás! Nem kapsz több értesítést.</h3>
+                </template>
+                <template x-if="ready && !success">
+                    <h3 class="highlighted-text">A leiratkozás közben hiba történt, próbáld újra.</h3>
+                </template>
+                <div x-ref="innerfooter">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="bmm-footer" x-ref="footer">
+</footer>
+</body>
+</html>
