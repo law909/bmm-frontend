@@ -87,6 +87,12 @@ h4 {
     font-weight: 400;
 }
 
+input, textarea, optgroup, select {
+    line-height: 1rem;
+    outline-color: var(--brand-color);
+    color: var(--secondary-color);
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -96,7 +102,6 @@ h4 {
  *
  * Customize the background color to match your design.
  */
-
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
