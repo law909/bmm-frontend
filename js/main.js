@@ -11,6 +11,7 @@ document.addEventListener('alpine:init', () => {
                 email: null,
                 eventgenerator: null,
                 parameter: null,
+                eventtype: '1',
             }
         },
         init() {

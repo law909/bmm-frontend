@@ -33,7 +33,7 @@
 
     <script defer src="config.js"></script>
     <script defer src="/js/vendor/alpinejs.min.js"></script>
-    <script src="/js/main.js?v=1.5"></script>
+    <script src="/js/main.js?v=1.6"></script>
 
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/main.css?v=1.7" rel="stylesheet">
@@ -87,6 +87,29 @@
                         </template>
                     </div>
                     <div class="bmm-control-row">
+                        <label class="bmm-label">Válaszd ki mit szeretnél</label>
+                        <div class="bmm-radio">
+                            <input
+                                :value="1"
+                                class="bmm-radio-input"
+                                name="eventtype"
+                                type="radio"
+                                x-model="formData.eventtype"
+                            >
+                            <div class="bmm-radio-caption">Kifejezést keresek</div>
+                        </div>
+                        <div class="bmm-radio">
+                            <input
+                                :value="2"
+                                class="bmm-radio-input"
+                                name="eventtype"
+                                type="radio"
+                                x-model="formData.eventtype"
+                            >
+                            <div class="bmm-radio-caption">Az adatbázis frissüléséről kérek értesítést</div>
+                        </div>
+                    </div>
+                    <div class="bmm-control-row" x-show="formData.eventtype === '1'">
                         <label class="bmm-label">Add meg a figyelni kívánt kifejezést! (egyszerre csak egy keresőszóra tudsz feliratkozni)</label>
                         <input class="bmm-input" required type="text" x-model="formData.parameter">
                     </div>
