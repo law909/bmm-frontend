@@ -16,9 +16,9 @@
     --light-font-color: #F9F6F6;
     --default-radius: 25px;
     --input-radius: 5px;
-    --gutter: 1em;
-    --input-h-gutter: 1em;
-    --input-v-gutter: 0.5em;
+    --gutter: 1rem;
+    --input-h-gutter: 1rem;
+    --input-v-gutter: 0.5rem;
 
     accent-color: var(--brand-color);
 }
@@ -73,17 +73,18 @@ html {
     color: var(--brand-color);
     background-color: #F9F6F6;
     font-family: 'Faune', Arial, sans-serif;
-    font-size: 1em;
-    line-height: 1.4;
+    font-size: 20px;
+    line-height: 1.3;
 }
 
 h3 {
-    font-size: 1.5em;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 h4 {
-    font-size: 1.25em;
-    font-weight: normal;
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
 /*
@@ -115,7 +116,7 @@ hr {
     height: 1px;
     border: 0;
     border-top: 1px solid #ccc;
-    margin: 1em 0;
+    margin: 1rem 0;
     padding: 0;
 }
 
@@ -248,14 +249,18 @@ textarea {
 
 .bmm-header-container {
     display: block;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-top: 5vh;
     margin-left: auto;
     margin-right: auto;
 }
 
 .bmm-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
     margin-top: 5vh;
     min-height: 14vh;
     background-color: var(--secondary-color);
@@ -265,7 +270,7 @@ textarea {
 .bmm-footer-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0px 0.5em;
+    gap: 0px 0.5rem;
     grid-template-areas:
     "c4hu kmonitor"
     "adatkezelesi adatkezelesi";
@@ -282,6 +287,10 @@ textarea {
     align-self: center;
 }
 
+.bmm-footer-logo {
+    width: 30vw;
+}
+
 .bmm-adatkezelesi {
     grid-area: adatkezelesi;
     align-self: center;
@@ -290,8 +299,8 @@ textarea {
 
 .btn {
     display: inline-block;
-    padding: 4px 3em;
-    line-height: 2em;
+    padding: 4px 3rem;
+    line-height: 2rem;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
@@ -315,8 +324,8 @@ textarea {
 
 .bmm-container {
     display: block;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -329,6 +338,7 @@ textarea {
     display: inline-block;
     padding-left: var(--input-h-gutter);
     margin-bottom: 4px;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
 }
@@ -337,7 +347,7 @@ textarea {
     display: inline-block;
     padding-left: var(--input-h-gutter);
     margin-bottom: 4px;
-    font-size: 0.85em;
+    font-size: 0.8rem;
 }
 
 .bmm-input {
@@ -357,7 +367,7 @@ textarea {
     grid-template-areas:
     "radio caption"
     ". description";
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
 }
 
 .bmm-radio-input {
@@ -387,9 +397,9 @@ textarea {
 
 .modal-inner {
     background-color: white;
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
     max-width: 600px;
-    padding: 2em;
+    padding: 2rem;
     margin: auto;
 }
 
@@ -417,6 +427,12 @@ textarea {
    ========================================================================== */
 
 @media screen and (min-width: 761px) {
+
+    h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+
     .bmm-header {
         min-height: 20vh;
     }
@@ -429,11 +445,15 @@ textarea {
         min-height: 14vh;
     }
 
+    .bmm-footer-logo {
+        width: 7vw;
+    }
+
     .bmm-container {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        gap: 1em;
+        gap: 1rem;
         max-width: 966px;
     }
 

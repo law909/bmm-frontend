@@ -1,12 +1,12 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "Figyusz!",
+  "name": "Figyusz!",
   "icons": [{
-    "src": "icon.png",
+    "src": "Icon.png",
     "type": "image/png",
     "sizes": "192x192"
   }],
-  "start_url": "/?utm_source=homescreen",
-  "background_color": "#fafafa",
-  "theme_color": "#fafafa"
+  "start_url": "/",
+  "background_color": "#46009e",
+  "theme_color": "#46009e"
 }
