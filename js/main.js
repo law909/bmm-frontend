@@ -47,7 +47,7 @@ document.addEventListener('alpine:init', () => {
                         this.clearFormData();
                     } else {
                         this.validation = respdata.fields;
-                        this.modalText = 'Ezzel az email címmel nem iratkozhatsz fel.';
+                        this.modalText = 'Hibásan töltötted ki a mezőket.';
                         this.isModalOpen = true;
                     }
                 })
