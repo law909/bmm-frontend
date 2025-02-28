@@ -32,6 +32,13 @@ document.addEventListener('alpine:init', () => {
                 .then((response) => response.json())
                 .then((data) => {
                     this.eventgeneratorList = data.data;
+                    for (let i = 0; i < this.eventgeneratorList.length; i++) {
+                        if (this.eventgeneratorList[i].options_schema) {
+                            for (let j = 0; j < this.eventgeneratorList[i].options_schema.length; j++) {
+                                this.eventgeneratorList[i].options_schema[j].form_name = "option_" + this.eventgeneratorList[i].options_schema[j].id;
+                            }
+                        }
+                    }
                 });
         },
         save() {
