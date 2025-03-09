@@ -94,7 +94,6 @@
                         <div class="bmm-control-row">
                             <label class="bmm-label" x-text="setting.title"></label>
                             <select :id="'select_'+setting.form_name" class="select2 bmm-input" multiple="multiple" x-model="formData[setting.form_name]">
-                                <option value="all" selected>Mindegyik</option>
                                 <template x-for="option in setting.options || []" :key="option">
                                     <option :value="option" x-text="option"></option>
                                 </template>
