@@ -43,7 +43,7 @@ document.addEventListener('alpine:init', () => {
             this.$watch('formData.eventgenerator', () => {
                 this.$nextTick(() => {
                     document.querySelectorAll('.select2').forEach(el => {
-                        $(el).select2({});
+                        $(el).select2({placeholder: 'Válassz a lehetőségek közül', closeOnSelect: false});
                     });
                 });
             });
